@@ -1,1 +1,5 @@
-"Wed Aug 09 2017 17:40:00 GMT-0700 (Pacific Daylight Time)" 
+#!/bin/bash
+mvn test
+mvn exec:java &
+sleep 30
+/node_modules/.bin/newman run postman.json
