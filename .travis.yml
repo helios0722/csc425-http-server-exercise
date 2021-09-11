@@ -1,0 +1,14 @@
+dist: focal
+
+language: java
+jdk:
+  - openjdk11
+
+before_install:
+  - sudo apt-get -y install npm
+  - npm install newman
+
+after_script:
+  - mvn exec:java &
+  - sleep 30  
+  - node_modules/.bin/newman run postman.json
